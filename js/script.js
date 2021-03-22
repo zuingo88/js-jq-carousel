@@ -3,12 +3,19 @@ function leftClick() {
     var currentImg = $('.active');
     var prevImg = currentImg.prev('img');
 
-    if (currentImg.hasClass('first')) {
+    var focusedCircle = $('.focused');
+    var prevCircle = focusedCircle.prev('a');
+
+    if (currentImg.hasClass('first') && focusedCircle.hasClass('first')) {
         var prevImg = $('img.last');
+        var prevCircle = $('a.last');
     }
 
     currentImg.toggleClass('active');
     prevImg.toggleClass('active');
+
+    focusedCircle.toggleClass('focused');
+    prevCircle.toggleClass('focused');
 
     console.log(currentImg, prevImg);
 }
@@ -18,14 +25,19 @@ function rightClick() {
     var currentImg = $('.active');
     var nextImg = currentImg.next('img');
 
-    if (currentImg.hasClass('last')) {
+    var focusedCircle = $('.focused');
+    var nextCircle = focusedCircle.next('a');
+
+    if (currentImg.hasClass('last') && focusedCircle.hasClass('last')) {
         var nextImg = $('img.first');
+        var nextCircle = $('a.first');
     }
     
     currentImg.toggleClass('active');
     nextImg.toggleClass('active');
 
-    console.log(currentImg, nextImg);
+    focusedCircle.toggleClass('focused');
+    nextCircle.toggleClass('focused');
 }
 
 function init() {

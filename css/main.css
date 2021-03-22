@@ -65,6 +65,7 @@ main {
 
 main .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -119,6 +120,20 @@ main .arrow.left {
 main .arrow.right {
     right: 5px;
 }
+
+main a.circle {
+    text-decoration: none;
+    color: black;
+    opacity: 0.3;
+}
+
+main a.circle.focused {
+    opacity: 1;
+}
+
+/* .far.fa-circle {
+    color: black;
+} */
 
 footer {
     position: fixed;
